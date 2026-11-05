@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -61,6 +61,14 @@ FRUITS = [
 @app.get("/api/fruits")
 def list_fruits():
     return FRUITS
+
+
+@app.get("/api/fruits/{name}/description")
+def fruit_description(name: str):
+    for fruit in FRUITS:
+        if fruit["name"].lower() == name.lower():
+            return {"name": fruit["name"], "description": fruit["description"]}
+    raise HTTPException(status_code=404, detail=f"Fruit '{name}' not found")
 
 
 @app.get("/", include_in_schema=False)
