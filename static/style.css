@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f9f1;
+  color: #243322;
+}
+header {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, #2e7d32, #8bc34a);
+  color: #fff;
+}
+header h1 { margin: 0 0 .5rem; font-size: 2.5rem; }
+main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+.card h2 { margin: .25rem 0; }
+.emoji { font-size: 2.5rem; }
+.local { color: #666; font-style: italic; margin: 0; }
+.tagline { font-weight: 600; color: #2e7d32; }
+.season { font-size: .9rem; color: #555; }
+.loading { grid-column: 1 / -1; text-align: center; }
+footer { text-align: center; padding: 1.5rem; color: #666; }
